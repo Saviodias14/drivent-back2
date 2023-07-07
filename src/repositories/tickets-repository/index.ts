@@ -5,7 +5,6 @@ export async function getTicketsType(userId:number) {
         where:{userId},
         select:{id:true}
     })
-
     const ticket = await prisma.ticket.findFirst({
         where: { enrollmentId: enrollment.id },
         select: { ticketTypeId: true },
