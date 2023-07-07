@@ -4,9 +4,10 @@ import * as controller from "@/controllers/tickets-controller"
 import { createTicketSchema } from "@/schemas/ticket-schema";
 
 const ticketsRouter = Router()
+ticketsRouter.use(authenticateToken)
 
-ticketsRouter.get("/types", authenticateToken, controller.getTicketsType)
-ticketsRouter.get("/", authenticateToken, controller.getTickets)
-ticketsRouter.post("/", authenticateToken,validateBody(createTicketSchema), controller.postTicket)
+ticketsRouter.get("/types", controller.getTicketsType)
+ticketsRouter.get("/", controller.getTickets)
+ticketsRouter.post("/", validateBody(createTicketSchema), controller.postTicket)
 
 export { ticketsRouter }

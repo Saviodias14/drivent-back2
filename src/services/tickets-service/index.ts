@@ -13,9 +13,8 @@ export async function getTicketsType(): Promise<[] | TicketType[] | TicketType> 
 export async function getTickets(userId: number) {
     const ticket = await repository.getTickets(userId)
     const TicketType = await repository.getTicketsType(ticket.ticketTypeId)
-    if (!ticket || !TicketType) {
-        throw notFoundError()
-    }
+    if (!ticket ) throw notFoundError()
+    if (!TicketType ) throw notFoundError()
     const result = { ...ticket, TicketType }
     return result
 }
