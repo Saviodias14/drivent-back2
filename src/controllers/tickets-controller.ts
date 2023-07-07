@@ -1,10 +1,12 @@
-import { Request, Response } from "express";
+import { Response } from "express";
 import httpStatus from "http-status";
 import * as service from "@/services/tickets-service"
+import { AuthenticatedRequest } from "@/middlewares";
 
-export async function getTicketsType(req:Request, res: Response) {
+export async function getTicketsType(req:AuthenticatedRequest, res: Response) {
+    const { userId } = req;
     try{
-        const result = await service.getTicketsType()
+        const result = await service.getTicketsType(userId)
 
         res.status(httpStatus.OK).send(result)
     } catch(err){
