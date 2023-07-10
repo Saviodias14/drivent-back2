@@ -12,7 +12,7 @@ export async function getTicketsType(): Promise<[] | TicketType[] | TicketType> 
 
 export async function getTickets(userId: number) {
     const ticket = await repository.getTickets(userId)
-    const TicketType = await repository.getTicketsType(ticket.ticketTypeId)
+    const TicketType = await repository.getUniqueTicketType(ticket.ticketTypeId)
     if (!ticket ) throw notFoundError()
     if (!TicketType ) throw notFoundError()
     const result = { ...ticket, TicketType }
@@ -20,7 +20,7 @@ export async function getTickets(userId: number) {
 }
 
 export async function postTicket(ticketTypeId: number, userId: number) {
-    const TicketType = await repository.getTicketsType(ticketTypeId)
+    const TicketType = await repository.getUniqueTicketType(ticketTypeId)
     const enrollmentId = await repository.getEnrollmentId(userId)
     if(!enrollmentId) throw notFoundError()
     if(!TicketType) throw invalidDataError(`${ticketTypeId} dont exist`)

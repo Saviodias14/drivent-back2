@@ -1,12 +1,13 @@
 import { prisma } from "@/config"
 import { NewTicket } from "@/protocols"
 
-export async function getTicketsType(ticketId?: number) {
-    if (ticketId) {
-        const result = await prisma.ticketType.findUnique({ where: { id: ticketId } })
-        return result
-    }
+export async function getTicketsType() {
     const result = prisma.ticketType.findMany()
+    return result
+}
+
+export async function getUniqueTicketType(ticketId?: number) {
+    const result = await prisma.ticketType.findUnique({ where: { id: ticketId } })
     return result
 }
 
@@ -17,20 +18,21 @@ export async function getTickets(userId: number) {
 }
 
 export async function getEnrollmentId(userId: number) {
-    const result = await prisma.enrollment.findUnique({ 
+    const result = await prisma.enrollment.findUnique({
         where: { userId },
-        select: {id: true} 
+        select: { id: true }
     })
     return result.id
 }
 
-export async function createTicket(ticket:Omit<NewTicket, 'id' | 'createdAt' | 'updatedAt'>) {
+export async function createTicket(ticket: Omit<NewTicket, 'id' | 'createdAt' | 'updatedAt'>) {
     const result = await prisma.ticket.create({
         data: {
-        status: ticket.status,
-        ticketTypeId: ticket.ticketTypeId,
-        enrollmentId: ticket.enrollmentId,},
-        select:{id: true, updatedAt: true, createdAt: true}
+            status: ticket.status,
+            ticketTypeId: ticket.ticketTypeId,
+            enrollmentId: ticket.enrollmentId,
+        },
+        select: { id: true, updatedAt: true, createdAt: true }
     })
     return result
 }
