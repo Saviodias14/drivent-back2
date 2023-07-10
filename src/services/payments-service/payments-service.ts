@@ -1,6 +1,6 @@
 import { notFoundError, unauthorizedError } from "@/errors"
 import { PostPayment } from "@/protocols";
-import * as repository from "@/repositories/payments-repository/payments-repository";
+import * as repository from "@/repositories/payments-repository";
 
 export async function verifyParameters(ticketId: number, userId: number) {
     const existTicket = await repository.getTicket(ticketId)

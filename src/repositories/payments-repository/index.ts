@@ -38,7 +38,7 @@ export async function postPayment(body: PostPayment, cardLastDigits: string) {
             status: 'PAID'
         },
         select: {
-            TicketType: true
+            TicketType: { select: { price: true } }
         }
     })
     const result = await prisma.payment.create({

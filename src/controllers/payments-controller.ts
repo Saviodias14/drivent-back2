@@ -27,7 +27,7 @@ export async function postPayment(req: AuthenticatedRequest, res: Response) {
     const body: PostPayment = req.body
     try {
         await service.verifyParameters(body.ticketId, userId)
-        const result = service.postPayment(body)
+        const result = await service.postPayment(body)
         res.status(httpStatus.OK).send(result)
     } catch (err) {
         if (err.name === 'UnauthorizedError') {
