@@ -17,12 +17,6 @@ export async function getPayment(ticketId: number) {
 export async function postPayment(body: PostPayment) {
     const cardLastDigits = body.cardData.number.toString().slice(-4)
     const payment = await repository.postPayment(body, cardLastDigits)
-    const result = { id: payment.id,
-        ticketId: body.ticketId,
-        value: payment.value,
-        cardIssuer: body.cardData.issuer,
-        cardLastDigits,
-        createdAt: payment.createdAt,
-        updatedAt: payment.updatedAt,}
+    const result = { ...payment, cardLastDigits, cardIssuer: body.cardData.issuer, ticketId: body.ticketId }
     return result
 }

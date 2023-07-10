@@ -2,13 +2,13 @@ import { PostPayment } from "@/protocols";
 import Joi from "joi";
 
 const paymentSchema = Joi.object<PostPayment>({
-    ticketId: Joi.number().required(),
+    ticketId: Joi.required(),
     cardData: Joi.object({
-        issuer: Joi.string().required(),
-        number: Joi.number().required(),
-        name: Joi.string().required(),
-        expirationDate: Joi.date().required(),
-        cvv: Joi.number().required()
+        issuer: Joi.required(),
+        number: Joi.required(),
+        name: Joi.required(),
+        expirationDate: Joi.required(),
+        cvv: Joi.required()
     }).required()
 })
 

@@ -35,22 +35,18 @@ export async function postPayment(body: PostPayment, cardLastDigits: string) {
             id: body.ticketId
         },
         data: {
-            updatedAt: new Date(),
             status: 'PAID'
         },
         select: {
             TicketType: true
         }
     })
-
     const result = await prisma.payment.create({
         data: {
             ticketId: body.ticketId,
             value: TicketType.price,
             cardIssuer: body.cardData.issuer,
             cardLastDigits,
-            createdAt: new Date(),
-            updatedAt: new Date()
         },
         select: {
             id: true,
