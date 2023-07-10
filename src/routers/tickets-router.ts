@@ -1,7 +1,7 @@
 import { authenticateToken, validateBody } from "@/middlewares";
 import { Router } from "express";
 import * as controller from "@/controllers/tickets-controller"
-import { createTicketSchema } from "@/schemas/ticket-schema";
+import { createTicketSchema } from "@/schemas";
 
 const ticketsRouter = Router()
 ticketsRouter.use(authenticateToken)
