@@ -54,15 +54,6 @@ describe('GET /hotels', () => {
             const { statusCode } = await server.get('/hotels').set('Authorization', `Bearer ${token}`)
             expect(statusCode).toBe(httpStatus.NOT_FOUND)
         })
-        it('Should respond with 404 if there is no hotel created', async () => {
-            const user = await createUser()
-            const token = await generateValidToken(user);
-            const enrollment = await createEnrollmentWithAddress(user)
-            const ticketType = await createTicketType()
-            await createTicket(enrollment.id, ticketType.id, faker.datatype.boolean() ? 'PAID' : 'RESERVED')
-            const { statusCode } = await server.get('/hotels').set('Authorization', `Bearer ${token}`)
-            expect(statusCode).toBe(httpStatus.NOT_FOUND)
-        })
         it('Shoul respond with 402 if ticket status is RESERVED', async () => {
             await createHotel()
             const user = await createUser()
@@ -82,6 +73,16 @@ describe('GET /hotels', () => {
             await createTicket(enrollment.id, ticketType.id, 'PAID')
             const { statusCode } = await server.get('/hotels').set('Authorization', `Bearer ${token}`)
             expect(statusCode).toBe(httpStatus.PAYMENT_REQUIRED)
+        })
+        it('Should respond with status 200 and with [] when exist no hotel', async()=>{
+            const user = await createUser()
+            const token = await generateValidToken(user);
+            const enrollment = await createEnrollmentWithAddress(user)
+            const ticketType = await createTicketTypeWhitDetails(true)
+            await createTicket(enrollment.id, ticketType.id, 'PAID')
+            const { statusCode, body } = await server.get('/hotels').set('Authorization', `Bearer ${token}`)
+            expect(statusCode).toBe(httpStatus.OK)
+            expect(body).toEqual([])
         })
         it('Should respond with status 200 and with hotels data', async()=>{
             const hotels = await createManyHotels(parseInt(faker.random.numeric()))
