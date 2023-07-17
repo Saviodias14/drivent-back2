@@ -13,12 +13,12 @@ export async function createTicketType() {
   });
 }
 
-export async function createTicketTypeWhitDetails(includesHotel: boolean) {
+export async function createTicketTypeWhitDetails(includesHotel: boolean, isRemote: boolean) {
   return prisma.ticketType.create({
     data: {
       name: faker.name.findName(),
       price: faker.datatype.number(),
-      isRemote: faker.datatype.boolean(),
+      isRemote,
       includesHotel,
     },
   });

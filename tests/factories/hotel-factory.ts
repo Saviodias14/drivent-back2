@@ -13,10 +13,15 @@ export async function createHotel() {
 export async function createManyHotels(number: number) {
     let hotels = []
     for (let i = 0; i < number; i++) {
-        const hotel = await createHotel()
+        const hotel = {
+            name: faker.company.companyName(),
+            image: faker.image.business(),
+        }
         hotels.push(hotel)
     }
-    return hotels
+    await prisma.hotel.createMany({
+        data:hotels,
+    })
 }
 
 export async function createHotelWithRooms() {

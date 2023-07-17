@@ -5,8 +5,9 @@ export async function getHotels() {
 }
 
 export async function getHotelsById(hotelId: number) {
-    return await prisma.hotel.findUnique({
+    const result =  await prisma.hotel.findUnique({
         where: { id: hotelId },
         include: { Rooms: true }
     })
+    return result
 }

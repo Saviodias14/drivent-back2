@@ -15,7 +15,6 @@ export async function getHotels(req: AuthenticatedRequest, res: Response) {
         if (err.name === 'PaymentRequired') {
             return res.sendStatus(httpStatus.PAYMENT_REQUIRED)
         }
-        res.sendStatus(httpStatus.BAD_REQUEST)
     }
 }
 
@@ -35,6 +34,5 @@ export async function getHotelsById(req: AuthenticatedRequest, res: Response) {
         if (err.name === 'PaymentRequired') {
             return res.sendStatus(httpStatus.PAYMENT_REQUIRED)
         }
-        res.sendStatus(httpStatus.BAD_REQUEST)
     }
 }

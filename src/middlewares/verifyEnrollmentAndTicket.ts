@@ -10,7 +10,7 @@ export async function verifyEnrollmentAndTicket(userId: number) {
     if (!ticket) {
         throw notFoundError()
     }
-    if(ticket.status==='RESERVED'||!ticket.TicketType.includesHotel){
+    if(ticket.status==='RESERVED'||!ticket.TicketType.includesHotel||ticket.TicketType.isRemote){
         throw paymentRequired()
     }
 }
