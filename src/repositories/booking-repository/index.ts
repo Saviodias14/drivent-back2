@@ -6,3 +6,23 @@ export async function getBooking(userId: number) {
         select: { id: true, Room: true },
     })
 }
+export async function verifyRoomId(roomId: number) {
+    return await prisma.room.findUnique({
+        where: { id: roomId }
+    })
+}
+
+export async function roomVacancy(roomId: number) {
+    return await prisma.booking.count({
+        where: { roomId }
+    })
+}
+export async function postBooking(userId: number, roomId: number) {
+    const { id } = await prisma.booking.create({
+        data: {
+            roomId,
+            userId
+        }
+    })
+    return id
+}
