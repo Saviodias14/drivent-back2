@@ -18,12 +18,12 @@ export async function roomVacancy(roomId: number) {
     })
 }
 export async function postBooking(userId: number, roomId: number) {
-    const id = await prisma.booking.create({
+    const bookingId = await prisma.booking.create({
         data: {
             roomId,
             userId
         },
-        select:{roomId:true}
+        select:{id:true}
     })
-    return id
+    return bookingId
 }
