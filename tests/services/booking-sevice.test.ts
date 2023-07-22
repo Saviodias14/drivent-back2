@@ -64,7 +64,7 @@ describe('POST /booking', () => {
         updatedAt: faker.date.past()
     }
     it('Should throw Forbidden Error if there are no room', async () => {
-        
+
         jest.spyOn(middleware, "verifyTicketAndTicketType").mockResolvedValueOnce(undefined)
         jest.spyOn(repository, "verifyRoomId").mockResolvedValueOnce(room)
         jest.spyOn(repository, "roomVacancy").mockImplementationOnce(() => Promise.resolve(room.capacity))
@@ -76,11 +76,11 @@ describe('POST /booking', () => {
         })
     })
     it('Should pass returning bookingId', async () => {
-        const bookingId = faker.datatype.number()
+        const bookingId = { roomId: faker.datatype.number() }
         jest.spyOn(middleware, "verifyTicketAndTicketType").mockResolvedValueOnce(undefined)
         jest.spyOn(repository, "verifyRoomId").mockResolvedValueOnce(room)
-        jest.spyOn(repository, "roomVacancy").mockImplementationOnce(() => Promise.resolve(room.capacity-1))
-        jest.spyOn(repository, "postBooking").mockImplementationOnce(()=> Promise.resolve(bookingId))
+        jest.spyOn(repository, "roomVacancy").mockImplementationOnce(() => Promise.resolve(room.capacity - 1))
+        jest.spyOn(repository, "postBooking").mockImplementationOnce(() => Promise.resolve(bookingId))
 
         const promisse = await bookingService.postBooking(faker.datatype.number(), faker.datatype.number())
         expect(promisse).toEqual(bookingId)
