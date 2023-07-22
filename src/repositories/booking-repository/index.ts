@@ -25,5 +25,5 @@ export async function postBooking(userId: number, roomId: number) {
         },
         select:{id:true}
     })
-    return bookingId
+    return bookingId.id
 }

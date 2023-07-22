@@ -76,11 +76,12 @@ describe('POST /booking', () => {
         })
     })
     it('Should pass returning bookingId', async () => {
-        const bookingId = { id: faker.datatype.number() }
+        const number = faker.datatype.number()
+        const bookingId = { "bookingId": number }
         jest.spyOn(middleware, "verifyTicketAndTicketType").mockResolvedValueOnce(undefined)
         jest.spyOn(repository, "verifyRoomId").mockResolvedValueOnce(room)
         jest.spyOn(repository, "roomVacancy").mockImplementationOnce(() => Promise.resolve(room.capacity - 1))
-        jest.spyOn(repository, "postBooking").mockImplementationOnce(() => Promise.resolve(bookingId))
+        jest.spyOn(repository, "postBooking").mockImplementationOnce(() => Promise.resolve(number))
 
         const promisse = await bookingService.postBooking(faker.datatype.number(), faker.datatype.number())
         expect(promisse).toEqual(bookingId)

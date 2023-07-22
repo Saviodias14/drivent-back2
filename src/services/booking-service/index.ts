@@ -21,5 +21,6 @@ export async function postBooking(userId: number, roomId: number) {
     if (countVacancy >= existRoom.capacity) {
         throw ForbiddenError()
     }
-    return await repository.postBooking(userId, roomId)
+    const result = await repository.postBooking(userId, roomId)
+    return {"bookingId": result}
 }

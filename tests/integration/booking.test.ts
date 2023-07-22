@@ -118,6 +118,6 @@ describe('POST /booking', () => {
         await createTicket(enrollment.id, ticketType.id, 'PAID')
         const { statusCode, body } = await server.post('/booking').set('Authorization', `Bearer ${token}`).send({ "roomId": hotel.Rooms[0].id })
         expect(statusCode).toBe(httpStatus.OK)
-        expect(body).toEqual({ "id":expect.any(Number) })
+        expect(body).toEqual({ "bookingId":expect.any(Number) })
     })
 })
