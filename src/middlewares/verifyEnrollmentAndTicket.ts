@@ -1,6 +1,5 @@
 import { prisma } from "@/config"
-import { notFoundError, paymentRequired } from "@/errors"
-import { forbidden } from "joi"
+import { notFoundError, paymentRequired, ForbiddenError } from "@/errors"
 
 export async function verifyEnrollmentAndTicket(userId: number) {
     const enrollment = await verifyEnrollment(userId)
@@ -18,14 +17,17 @@ export async function verifyEnrollmentAndTicket(userId: number) {
 
 export async function verifyTicketAndTicketType(userId:number) {
     const enrollment = await verifyEnrollment(userId)
+    if(!enrollment){
+        throw ForbiddenError()
+    }
     const ticket = await verifyTicket(enrollment.id)
     if(ticket.status==='RESERVED'||ticket.TicketType.isRemote||!ticket.TicketType.includesHotel){
-        throw forbidden()
+        throw ForbiddenError()
     }
 
 }
 
-async function verifyEnrollment(userId: number) {
+export async function verifyEnrollment(userId: number) {
     return await prisma.enrollment.findUnique({
         where: {
             userId
@@ -33,7 +35,8 @@ async function verifyEnrollment(userId: number) {
     })
 }
 
-async function verifyTicket(enrollmentId: number) {
+export async function verifyTicket(enrollmentId: number) {
+
     return await prisma.ticket.findFirst({
         where: {
             enrollmentId

@@ -54,7 +54,6 @@ describe('GET /booking', () => {
             const booking = await createBooking(user.id, hotel.Rooms[0].id)
             const { statusCode, body } = await server.get('/booking').set('Authorization', `Bearer ${token}`)
             expect(statusCode).toBe(httpStatus.OK)
-            console.log(body, booking)
             expect(body).toEqual(expect.objectContaining({
                 ...booking,
                 Room: {
@@ -65,4 +64,30 @@ describe('GET /booking', () => {
             }))
         })
     })
+})
+
+describe('POST /booking', () => {
+    it('should respond with status 401 if no token is given', async () => {
+        const response = await server.get('/hotels');
+
+        expect(response.status).toBe(httpStatus.UNAUTHORIZED);
+    });
+
+    it('should respond with status 401 if given token is not valid', async () => {
+        const token = faker.lorem.word();
+
+        const response = await server.get('/hotels').set('Authorization', `Bearer ${token}`);
+
+        expect(response.status).toBe(httpStatus.UNAUTHORIZED);
+    });
+
+    it('should respond with status 401 if there is no session for given token', async () => {
+        const userWithoutSession = await createUser();
+        const token = jwt.sign({ userId: userWithoutSession.id }, process.env.JWT_SECRET);
+
+        const response = await server.get('/hotels').set('Authorization', `Bearer ${token}`);
+
+        expect(response.status).toBe(httpStatus.UNAUTHORIZED);
+    });
+    it('Should respond with status')
 })
