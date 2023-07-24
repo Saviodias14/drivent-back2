@@ -32,8 +32,9 @@ export async function postBooking(req: AuthenticatedRequest, res: Response) {
 export async function updateBooking(req: AuthenticatedRequest, res: Response) {
     const { userId } = req
     const roomId: number = req.body.roomId
+    const bookingId = parseInt(req.params.bookingId)
     try {
-        const result = await service.updateBooking(userId, roomId)
+        const result = await service.updateBooking(userId, roomId, bookingId)
         res.send(result)
     } catch (err) {
         if (err.name === 'NotFoundError') {

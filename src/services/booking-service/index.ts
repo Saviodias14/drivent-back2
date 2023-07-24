@@ -25,9 +25,9 @@ export async function postBooking(userId: number, roomId: number) {
     return { "bookingId": result }
 }
 
-export async function updateBooking(userId: number, roomId: number) {
-    const existBooking = await repository.findBooking(userId)
-    if(!existBooking){
+export async function updateBooking(userId: number, roomId: number, bookingId: number) {
+    const existBooking = await repository.findBooking(bookingId)
+    if (!existBooking || existBooking.userId !== userId) {
         throw ForbiddenError()
     }
     const existRoom = await repository.verifyRoomId(roomId)
@@ -38,6 +38,6 @@ export async function updateBooking(userId: number, roomId: number) {
     if (countVacancy >= existRoom.capacity) {
         throw ForbiddenError()
     }
-    await repository.updateBooking(existBooking.id, roomId)
-    return {"bookingId":existBooking.id}
+    await repository.updateBooking(bookingId, roomId)
+    return { bookingId }
 }
