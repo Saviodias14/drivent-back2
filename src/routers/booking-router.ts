@@ -7,6 +7,6 @@ const bookingRouter = Router()
 
 bookingRouter.get("/", authenticateToken,  controller.getBooking)
 bookingRouter.post("/", authenticateToken, validateBody(bookingSchema), controller.postBooking)
-bookingRouter.put("/:bookingId")
+bookingRouter.put("/:bookingId", authenticateToken, validateBody(bookingSchema), controller.updateBooking)
 
 export { bookingRouter }

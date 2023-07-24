@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690043440265" clover="3.2.0">
-  <project timestamp="1690043440265" name="All files">
-    <metrics statements="704" coveredstatements="394" conditionals="101" coveredconditionals="12" methods="114" coveredmethods="21" elements="919" coveredelements="427" complexity="0" loc="704" ncloc="704" packages="27" files="75" classes="75"/>
+<coverage generated="1690059181455" clover="3.2.0">
+  <project timestamp="1690059181456" name="All files">
+    <metrics statements="705" coveredstatements="422" conditionals="101" coveredconditionals="20" methods="114" coveredmethods="32" elements="920" coveredelements="474" complexity="0" loc="705" ncloc="705" packages="27" files="75" classes="75"/>
     <package name="src">
       <metrics statements="17" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
       <file name="app.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/app.ts">
@@ -51,7 +51,7 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="134" coveredstatements="40" conditionals="15" coveredconditionals="0" methods="15" coveredmethods="1"/>
+      <metrics statements="134" coveredstatements="49" conditionals="15" coveredconditionals="2" methods="15" coveredmethods="2"/>
       <file name="authentication-controller.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/controllers/authentication-controller.ts">
         <metrics statements="8" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="2" type="stmt"/>
@@ -64,7 +64,7 @@
         <line num="13" count="0" type="stmt"/>
       </file>
       <file name="booking-controller.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/controllers/booking-controller.ts">
-        <metrics statements="18" coveredstatements="9" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
@@ -74,15 +74,15 @@
         <line num="10" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="26" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="1" type="stmt"/>
       </file>
       <file name="enrollments-controller.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/controllers/enrollments-controller.ts">
         <metrics statements="20" coveredstatements="5" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
@@ -229,7 +229,7 @@
       <file name="forbidden-error.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/errors/forbidden-error.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/errors/index.ts">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -256,7 +256,7 @@
       <file name="not-found-error.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/errors/not-found-error.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="payment-is-required.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/errors/payment-is-required.ts">
         <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -271,11 +271,11 @@
       <file name="unauthorized-error.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/errors/unauthorized-error.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.middlewares">
-      <metrics statements="68" coveredstatements="35" conditionals="23" coveredconditionals="2" methods="12" coveredmethods="4"/>
+      <metrics statements="68" coveredstatements="45" conditionals="23" coveredconditionals="7" methods="12" coveredmethods="8"/>
       <file name="authentication-middleware.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/middlewares/authentication-middleware.ts">
         <metrics statements="17" coveredstatements="17" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="2" count="2" type="stmt"/>
@@ -283,18 +283,18 @@
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="10" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="23" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="34" count="3" type="stmt"/>
+        <line num="9" count="11" type="stmt"/>
+        <line num="10" count="11" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="13" count="9" type="cond" truecount="0" falsecount="1"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="23" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
       </file>
       <file name="error-handling-middleware.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/middlewares/error-handling-middleware.ts">
         <metrics statements="14" coveredstatements="2" conditionals="7" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -321,7 +321,7 @@
         <line num="4" count="2" type="stmt"/>
       </file>
       <file name="validation-middleware.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/middlewares/validation-middleware.ts">
-        <metrics statements="11" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="2"/>
+        <metrics statements="11" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="3"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
@@ -329,13 +329,13 @@
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="15" count="12" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="21" count="0" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="3" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
       </file>
       <file name="verifyEnrollmentAndTicket.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/middlewares/verifyEnrollmentAndTicket.ts">
-        <metrics statements="22" coveredstatements="6" conditionals="11" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <metrics statements="22" coveredstatements="13" conditionals="11" coveredconditionals="4" methods="4" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -348,16 +348,16 @@
         <line num="13" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="14" count="0" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="0" falsecount="1"/>
         <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="25" count="1" type="stmt"/>
         <line num="30" count="2" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories.address-repository">
@@ -371,19 +371,19 @@
       </file>
     </package>
     <package name="src.repositories.booking-repository">
-      <metrics statements="10" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/repositories/booking-repository/index.ts">
-        <metrics statements="10" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
         <line num="20" count="2" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories.enrollment-repository">
@@ -679,9 +679,9 @@
       </file>
     </package>
     <package name="src.services.booking-service">
-      <metrics statements="18" coveredstatements="18" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <file name="index.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/src/services/booking-service/index.ts">
-        <metrics statements="18" coveredstatements="18" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -692,14 +692,15 @@
         <line num="9" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="21" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="22" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.services.enrollments-service">
@@ -886,26 +887,26 @@
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="18" count="6" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
-        <line num="23" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
+        <line num="23" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
       </file>
     </package>
     <package name="tests.factories">
-      <metrics statements="78" coveredstatements="52" conditionals="19" coveredconditionals="5" methods="16" coveredmethods="4"/>
+      <metrics statements="78" coveredstatements="56" conditionals="19" coveredconditionals="6" methods="16" coveredmethods="7"/>
       <file name="booking-factory.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/tests/factories/booking-factory.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -913,14 +914,14 @@
         <line num="4" count="1" type="stmt"/>
       </file>
       <file name="enrollments-factory.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/tests/factories/enrollments-factory.ts">
-        <metrics statements="9" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
-        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="11" count="0" type="stmt"/>
+        <line num="9" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="3" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
       </file>
@@ -945,10 +946,10 @@
         <line num="20" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="10" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="40" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
         <line num="49" count="2" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
@@ -987,19 +988,19 @@
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
       </file>
       <file name="tickets-factory.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/tests/factories/tickets-factory.ts">
-        <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
       </file>
       <file name="users-factory.ts" path="/home/savim14/Desktop/savio/driven-modulo5/Driven.t/drivent__t10.2/tests/factories/users-factory.ts">
         <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
@@ -1007,9 +1008,9 @@
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
+        <line num="7" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
       </file>
     </package>
   </project>
