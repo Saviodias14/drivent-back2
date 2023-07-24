@@ -87,3 +87,62 @@ describe('POST /booking', () => {
         expect(promisse).toEqual(bookingId)
     })
 })
+
+describe('PUT /booking/:bookingId', () => {
+    it('Should throw Forbidden Error if there is no booking', async () => {
+        jest.spyOn(repository, "findBooking").mockImplementationOnce(() => Promise.resolve(undefined))
+        const promisse = bookingService.updateBooking(faker.datatype.number(), faker.datatype.number(), faker.datatype.number())
+        expect(promisse).rejects.toEqual({
+            name: 'ForbiddenError',
+            message: 'This action is not pemited',
+        })
+    })
+    const userId = faker.datatype.number()
+    const booking = {
+        id: faker.datatype.number(),
+        userId,
+        roomId: faker.datatype.number(),
+        createdAt: faker.date.past(),
+        updatedAt: faker.date.past()
+    }
+    it('Should throw Not Found Error if there is no room', async () => {
+
+        jest.spyOn(repository, "findBooking").mockImplementationOnce(() => Promise.resolve(booking))
+        jest.spyOn(repository, "verifyRoomId").mockImplementationOnce(() => Promise.resolve(undefined))
+        const promisse = bookingService.updateBooking(userId, faker.datatype.number(), booking.id)
+        expect(promisse).rejects.toEqual({
+            name: 'NotFoundError',
+            message: 'No result for this search!',
+        })
+    })
+    const room = {
+        id: faker.datatype.number(),
+        name: faker.name.findName(),
+        capacity: faker.datatype.number(),
+        hotelId: faker.datatype.number(),
+        createdAt: faker.date.past(),
+        updatedAt: faker.date.past(),
+    }
+    it('Should throw Forbidden Error if there is available room', async () => {
+
+        jest.spyOn(repository, "findBooking").mockImplementationOnce(() => Promise.resolve(booking))
+        jest.spyOn(repository, "verifyRoomId").mockImplementationOnce(() => Promise.resolve(room))
+        jest.spyOn(repository, "roomVacancy").mockImplementationOnce(() => Promise.resolve(room.capacity))
+        const promisse = bookingService.updateBooking(userId, room.id, booking.id)
+        expect(promisse).rejects.toEqual({
+            name: 'ForbiddenError',
+            message: 'This action is not pemited',
+        })
+    })
+    it('Should pass and return the bookingId', async () => {
+
+        jest.spyOn(repository, "findBooking").mockImplementationOnce(() => Promise.resolve(booking))
+        jest.spyOn(repository, "verifyRoomId").mockImplementationOnce(() => Promise.resolve(room))
+        jest.spyOn(repository, "roomVacancy").mockImplementationOnce(() => Promise.resolve(room.capacity-1))
+        jest.spyOn(repository, "updateBooking").mockImplementationOnce(()=>Promise.resolve({...booking, roomId:room.id}))
+        const promisse = await bookingService.updateBooking(userId, room.id, booking.id)
+        expect(promisse).toEqual({
+            "bookingId": booking.id
+        })
+    })
+})
